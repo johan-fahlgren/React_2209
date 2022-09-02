@@ -1,0 +1,44 @@
+.hero-img {
+  margin: 5% 0;
+  max-width: 90vw;
+}
+
+.list {
+  font-size: 14px;
+  width: 90%;
+  margin: 10px;
+  padding: 0 0 0 10px;
+  text-align: left;
+  background-color: blanchedalmond;
+}
+
+li {
+  list-style: none;
+  margin: 0;
+  padding: 5px 0;
+}
+
+table {
+  margin: 5% 0;
+  width: 90%;
+}
+
+th,
+td {
+  padding: 0;
+  width: 100px;
+}
+
+th {
+  color: white;
+  background-color: #282c34;
+}
+
+td {
+  color: black;
+  background-color: blanchedalmond;
+}
+
+.up-arrow {
+  width: 50px;
+}
