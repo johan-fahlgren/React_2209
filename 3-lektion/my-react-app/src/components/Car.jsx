@@ -6,7 +6,7 @@ const Car = ({ initialCarColor }) => {
 
   useEffect(() => {
     setCarColor(initialCarColor);
-  });
+  }, []);
 
   const changeColor = () => {
     const newColor = carColor === "red" ? "blue" : "red";

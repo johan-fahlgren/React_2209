@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import Car from "./Car";
 
 const Garage = ({ nrOfCars, carColorsArray }) => {
   const array = Array.from(Array(nrOfCars), (_, index) => index + 1);
+
+  const [count, setCount] = useState(0);
 
   return (
     <div style={{ border: "10px solid red" }}>
@@ -10,6 +12,16 @@ const Garage = ({ nrOfCars, carColorsArray }) => {
       {carColorsArray.map((color) => (
         <Car initialCarColor={color} />
       ))}
+      <div>
+        <button
+          style={{ width: "400px", height: "50px" }}
+          onClick={() => {
+            setCount(count + 1);
+          }}
+        >
+          Number of clicks <b>{count}</b>
+        </button>
+      </div>
     </div>
   );
 };
