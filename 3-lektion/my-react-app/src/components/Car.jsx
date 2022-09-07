@@ -1,48 +1,23 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
-const Car = ({ initialCarColor }) => {
-	console.log("initialCarColor===",initialCarColor)
-	const [carColor, setCarColor] = useState("");
-	const [showSeat, setShowSeat] = useState(true);
-
-	useEffect(() => {
-		setCarColor(initialCarColor)
-	}, [])
-
-	console.log("carColor==",carColor)
-
-	const onClickChangeColor = () => {
-		const newColor = carColor === "red" ? "blue" : "red";
-
-		// let newColor
-		// if (carColor === "red")
-		// 	newColor = "blue"
-		// else
-		// 	newColor = "red"
-		setCarColor(newColor);
-	};
-
-	return (
-		<div style={{ border: `5px solid black` }}>
-			This div is a<span style={{ color: carColor }}> {carColor} </span>
-			car
-
-			<button onClick={onClickChangeColor}>Change colour</button>
-			
-			<button onClick={ () => setShowSeat(!showSeat) } >Toggle seat</button>
-			
-			{showSeat ? <Seat seatColor="green" showColor={true} /> : <div />}
-		</div>
-	);
+const Car = (props) => {
+  return (
+    <div style={{ border: "5px solid black" }}>
+      This div is a
+      <span style={{ color: props.carColor }}> {props.carColor} </span>
+      car
+      <Seat seatColor={props.seatColor} showColor={true} />
+      {/* Add component inside another */}
+    </div>
+  );
 };
 
 const Seat = (props) => {
-	return (
-		<div>
-			This is a {props.showColor ? props.seatColor : ""}
-			seat
-		</div>
-	);
+  return (
+    <div>
+      This car has {props.showColor ? props.seatColor : " colorless "} seats
+    </div>
+  );
 };
 
 export default Car;
