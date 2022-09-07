@@ -1,16 +1,15 @@
 import "./App.css";
-import { Image, Flexform, Table, List, Car } from "./components";
+import { Image, Flexform, Table, List, Garage } from "./components";
 import BackToTop from "react-back-to-top-button";
 
 function App() {
-  const a = 2;
-
   return (
     <div className="App">
       <List />
       <Image />
 
-      <Car carColor="red" seatColor="blue" />
+      {/* <Car /> */}
+      <Garage nrOfCars={3} carColorsArray={["green", "pink", "white"]} />
 
       <Flexform />
       <Table />
