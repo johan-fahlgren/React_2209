@@ -1,35 +1,19 @@
-import './App.css';
-import { Image, Flexform, Table, List, Car, Garage } from "./components"
+import "./App.css";
+import { Image, Form, MyButton } from "./components";
 import BackToTop from "react-back-to-top-button";
+import React, { useState } from "react";
 
 function App() {
-  const a = 2;
+  const [formTitle, setFormTitle] = useState("title");
+
+  const onClick = () => setFormTitle(`[${formTitle}]`);
 
   return (
     <div className="App">
-
-      <List />
       <Image />
-
-      <Car initialCarColor={"gray"} />
-      <Garage
-        nrOfCars={3}
-        carColorsArray={["green", "pink", "blue"]}
-      />
-
-      <Flexform />
-      <Table />
-      
-
-      <BackToTop
-        showOnScrollUp={false}
-        showAt={100}
-        speed={100}
-        easing="easeInOutSine"
-      >
-        <span>^</span>
-      </BackToTop>
-
+      <MyButton onClickButton={onClick} />
+      <Form formTitle={formTitle} />
+      <button onClick={onClick}>Click</button>
     </div>
   );
 }

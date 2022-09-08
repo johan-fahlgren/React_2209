@@ -1,15 +1,5 @@
-import { Image } from "./Image"
-import { Flexform } from "./Flexform"
-import { Table } from "./Table"
-import List from "./List"
-import Car from "./Car"
-import Garage from "./Garage"
+import { Image } from "./Image";
+import Form from "./Form";
+import MyButton from "./MyButton";
 
-export {
-	Image,
-	Flexform,
-	Table,
-	List,
-	Car,
-	Garage,
-}
+export { Image, Form, MyButton };
