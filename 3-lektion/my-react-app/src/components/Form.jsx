@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 
 const Form = ({ formTitle }) => {
-  const [name, setName] = useState("");
-
   /*  useEffect(() => {
     console.log("component was mounted or updated");
   }); // Trigger every time a component is updated or mounted
@@ -19,9 +17,13 @@ const Form = ({ formTitle }) => {
     console.log("The prop ''formTitle or name'' has changed");
   }, [formTitle, name]); //Triggerd when specific components has mounted or updated */
 
+  const [name, setName] = useState("");
+  const [docTitle, setDocTitle] = useState(`Hi, ${name}`);
+  const [showChildComp, setShowChildComp] = useState(true);
+
   useEffect(() => {
-    document.title = `hi, ${name}`;
-  }, [name]);
+    document.title = docTitle;
+  }, [docTitle]);
 
   return (
     <div>
@@ -32,8 +34,26 @@ const Form = ({ formTitle }) => {
         value={name}
         onChange={(e) => setName(e.target.value)}
       />
+      <button onClick={() => setDocTitle(`Hi, ${name}`)}>Submit</button>
+      {showChildComp && <ChildComp />}
+
+      <button onClick={() => setShowChildComp(!showChildComp)}>
+        Toggle child component
+      </button>
     </div>
   );
+};
+
+const ChildComp = () => {
+  useEffect(() => {
+    console.log("Child component has been mounted");
+
+    return () => {
+      console.log("this is cleanup");
+    };
+  }, []);
+
+  return <div>I am a child component</div>;
 };
 
 export default Form;
