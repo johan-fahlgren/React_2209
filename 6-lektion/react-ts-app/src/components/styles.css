@@ -1,0 +1,16 @@
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border: 2px solid black;
+	width: 400px;
+	padding: 10px;
+	margin: 20px;
+}
+
+.product-img {
+	width: 400px;
+	height: 275px;
+	object-fit: cover;
+}

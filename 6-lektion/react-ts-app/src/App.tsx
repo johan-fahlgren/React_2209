@@ -1,25 +1,41 @@
-import React from "react";
+import React, { useState } from 'react'
+import { Product } from './components'
+import data from './data.json'
 
-import "./App.css";
+import './App.css'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [itemsBought, setItemsBought] = useState(0)
+
+	const onBuyItem = (clicks: number) => {
+		const totalItemsBought: number = itemsBought + clicks
+		setItemsBought(totalItemsBought)
+	}
+
+	return (
+		<div className="App">
+			<h2>My React ts app</h2>
+
+			<div
+				style={{
+					display: 'flex',
+					flexDirection: 'row',
+					justifyContent: 'center',
+				}}
+			>
+				{data.map((item) => (
+					<Product
+						name={item.name}
+						imgSrc={item.imgSrc}
+						description={item.description}
+						buttonText="Buy"
+						functionToRun={onBuyItem}
+					/>
+				))}
+			</div>
+			<h2>Items bought: {itemsBought}</h2>
+		</div>
+	)
 }
 
-export default App;
+export default App

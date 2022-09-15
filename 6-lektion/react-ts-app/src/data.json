@@ -1,0 +1,17 @@
+[
+	{
+		"name": "HeadPhones",
+		"imgSrc": "./images/c-d-x-PDX_a_82obo-unsplash.jpg",
+		"description": ["Great sounding headphones", "Buy 1 get 1 free"]
+	},
+	{
+		"name": "Watch",
+		"imgSrc": "./images/rachit-tank-2cFZ_FB08UM-unsplash.jpg",
+		"description": ["this is very expensive watch", "You can't afford"]
+	},
+	{
+		"name": "Shoes",
+		"imgSrc": "./images/revolt-164_6wVEHfI-unsplash.jpg",
+		"description": ["The best shoes money can buy", "Run like wind"]
+	}
+]
